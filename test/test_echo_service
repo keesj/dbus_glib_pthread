@@ -1,0 +1,14 @@
+#/bin/sh
+if [ $# -ne 1 ]
+then
+	echo "Usage $0 'text to echo'"
+	exit 1
+fi
+dbus-send \
+	--system \
+	--type=method_call \
+	--print-reply  \
+	--dest=com.test.EchoService \
+	/com/test/Platform \
+	com.test.EchoService.echo \
+	string:$1
