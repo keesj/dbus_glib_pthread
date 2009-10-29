@@ -142,9 +142,10 @@ int init_glib_dbus(char *namespace, char *path,
     guint32 err, ret;
     GObject *handle;
 
-    dbus_threads_init_default();
     g_type_init();
-
+    g_thread_init(NULL);
+    dbus_g_thread_init();
+    //dbus_threads_init_default(); still needed? */
     handle = g_object_new(G_TYPE_OBJECT, NULL);
     if (handle == NULL) {
 	log(LOG_ERR, "Can't create handle\n");

@@ -2,7 +2,7 @@ CFLAGS ?= -g
 CFLAGS += -Wall
  
 PKG_CONFIG ?= pkg-config
-PKGS = glib-2.0 dbus-1 dbus-glib-1
+PKGS = glib-2.0 gthread-2.0 dbus-1 dbus-glib-1
 
 CFLAGS += `$(PKG_CONFIG) --cflags $(PKGS)`
 LDLIBS += `$(PKG_CONFIG) --libs $(PKGS)`
