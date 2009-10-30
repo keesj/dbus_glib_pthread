@@ -29,7 +29,7 @@ int thread_signal(struct thread *thread, int sig)
 
 int thread_join(struct thread *thread)
 {
-    void **value_ptr;
+    void ** value_ptr = NULL;
     int retval = 0;
     retval = thread_join_ptr(thread, value_ptr);
     if (value_ptr != NULL) {	/* UNTESTED!!!!!!!!!!!!!! */
