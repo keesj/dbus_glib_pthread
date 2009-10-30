@@ -34,10 +34,12 @@ gboolean echo_calling_service_call_echo(GObject * obj, char *in, int count,
 	    printf("echo test failed %s %s\n", buffer, retval);
 	    fprintf(stderr, "echo test failed %s != %s\n", buffer, retval);
 	    //TODO do the quark thing to set error ??
+	    free(buffer);
 	    return FALSE;
 	}
 	free(retval);
     }
+    free(buffer);
     return TRUE;
 }
 

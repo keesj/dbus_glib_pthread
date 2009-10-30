@@ -38,17 +38,19 @@ void *thread_run_method(void *arg)
 	}
 
 	for (i = 0; i < count; i++) {
-	    sprintf(buffer, "%s + echo data %i", in, i);
+	    snprintf(buffer, 100, "%s + echo data %i", in, i);
 	    retval = echo_client_echo(echo_client, buffer);
 	    if (strncmp(buffer, retval, 100)) {
 		printf("echo test failed %s %s\n", buffer, retval);
 		fprintf(stderr, "echo test failed %s != %s\n", buffer,
 			retval);
 		//TODO do the quark thing to set error ??
+		free(buffer);
 		pthread_exit(NULL);
 	    }
 	    free(retval);
 	}
+        free(buffer);
 	thread_comm_lock(thread);
 	/** inside the lock we look if where where kicked during our last run and if so 
 	we run again */
@@ -60,6 +62,7 @@ void *thread_run_method(void *arg)
 	}
 	thread_comm_unlock(thread);
     }
+    log(LOG_NOTICE, "Done\n");
     pthread_exit(NULL);
 }
 
