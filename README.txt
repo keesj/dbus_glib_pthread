@@ -33,7 +33,6 @@ How to test the current code:
 5) start the echo calling service ./echo_calling_service_threaded -v & (possibly running this under gdb)
 6) start the test -> execute ./test/test_echo_calling_service test 1200 a number of times
 
-Expected outcome the service works like charm and doesn't eat memory or crash
+Expected outcome the service works like charm and doesn't eat memory or crash(but results may vary)
 
-Actual outcome:
-the echo_calling_service_threaded crashed in unpredictable ways
+I also implemented the  EchoServices and a EchoServiceClient java to test go to the java directory and either run make echo_service or echo_service_client.
