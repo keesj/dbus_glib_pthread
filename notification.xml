@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://standards.freedesktop.org/dbus/1.0/introspect.dtd">
+<node name="/com/test/Platform">
+  <interface name="com.test.Notification">
+    <signal name="Notify"/>
+  </interface>
+</node>

@@ -10,7 +10,7 @@ LDLIBS += `$(PKG_CONFIG) --libs $(PKGS)`
 
 LDLIBS +=  -Lalib -la
 CFLAGS += -I.
-all:alib/alib.so echo_service echo_client echo_calling_service echo_calling_service_threaded
+all:alib/alib.so echo_service echo_client echo_calling_service echo_calling_service_threaded notification_test
 
 alib/alib.so:
 	$(MAKE) -C alib
@@ -25,6 +25,7 @@ echo_calling_service_obj=echo_service_client.o
 echo_calling_service_threaded:echo_calling_service_binding_server.h echo_service_client.o
 echo_calling_service_threaded_obj=echo_service_client.o
 
+notification_test:notification_test.c
 %_binding_server.h:%.xml
 	dbus-binding-tool --mode=glib-server --prefix=$(basename $<) $< --output=$@
 

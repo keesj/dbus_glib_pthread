@@ -1,0 +1,5 @@
+#/bin/sh
+dbus-send \
+	--system \
+	/com/test/Notification \
+	com.test.Notification.Notify
