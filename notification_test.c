@@ -87,7 +87,6 @@ int main(int argc, char *argv[])
 	}
 
 	proxy = dbus_g_proxy_new_for_name(connection, "com.test.Notification",
-	proxy = dbus_g_proxy_new_for_name(connection, "com.test.Notification",
 					  "/com/test/Notification", "com.test.Notification");
         dbus_g_proxy_add_signal(proxy, "Notify",G_TYPE_INVALID);
         dbus_g_proxy_connect_signal(proxy, "Notify", test_callback, NULL, NULL);
