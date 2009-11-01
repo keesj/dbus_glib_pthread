@@ -45,3 +45,8 @@ Notification test:
 3) see nothing happens
 4) goto java and execute make run_notification
 5) run ./test/test_send_notification and see it works
+
+Notification test2:
+1) start ./notification_test2
+2) run ./test/test_send_notification
+3) see Notify works!
