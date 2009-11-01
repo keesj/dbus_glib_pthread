@@ -36,3 +36,12 @@ How to test the current code:
 Expected outcome the service works like charm and doesn't eat memory or crash(but results may vary)
 
 I also implemented the  EchoServices and a EchoServiceClient java to test go to the java directory and either run make echo_service or echo_service_client.
+
+
+
+Notification test:
+1) start ./notification_test -v
+2) run ./test/test_send_notification
+3) see nothing happens
+4) goto java and execute make run_notification
+5) run ./test/test_send_notification and see it works
